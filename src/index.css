@@ -1,0 +1,70 @@
+html, body, #root, .header, .main, .footer {
+    display: grid;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+html {
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+#root {
+    grid-template-areas: 'header' 'main' 'footer';
+    grid-template-rows: 3.7rem 1fr auto;
+}
+
+.header {
+    grid-area: header;
+    height: 3.7rem;
+    background-color: white;
+    grid-template-columns: repeat(2, 50%);
+}
+
+.header .logo {
+    font-size: 2rem;
+    grid-area: 1 / 1 / 2 / 3;
+    justify-self: center;
+    align-self: center;
+    color: #1565c0;
+    font-weight: bold;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+    grid-template-columns: repeat(2, 50%);
+    justify-items: center;
+    align-items: center;
+    height: 3rem;
+    margin-top: 2rem;
+}
+
+.footer span {
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+span {
+    display: block;
+}
+
+@media (min-width: 930px) and (min-height: 596px) {
+    header {
+        height: 4.2rem;
+    }
+}
